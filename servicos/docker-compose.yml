@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  associados:
+    image: associados:latest
+     
+    ports:
+      - 9999:9999
+
+    networks:
+      - boasaude-net
+
+  comunicacaolegado:
+    image: comunicacaolegado:latest
+     
+    ports:
+      - 9998:9998
+
+    networks:
+      - boasaude-net
+
+  autenticacao:
+    image: autenticacao:latest
+     
+    ports:
+      - 9997:9997
+
+    networks:
+      - boasaude-net
+
+networks:
+  boasaude-net:
+    name: boasaude-net
