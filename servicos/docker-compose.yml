@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  autenticacao:
+    image: autenticacao:latest
+     
+    ports:
+      - 9997:9997
+
+    networks:
+      - boasaude-net
+  
   associados:
     image: associados:latest
      
@@ -18,12 +27,12 @@ services:
 
     networks:
       - boasaude-net
-
-  autenticacao:
-    image: autenticacao:latest
+  
+  conveniados:
+    image: conveniados:latest
      
     ports:
-      - 9997:9997
+      - 9996:9996
 
     networks:
       - boasaude-net
